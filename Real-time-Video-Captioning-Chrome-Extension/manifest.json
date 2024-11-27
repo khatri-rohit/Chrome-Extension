@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Real-time Video Captions",
+    "version": "1.0",
+    "description": "Transcribes audio from videos in real-time",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabCapture",
+        "downloads"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_start"
+        }
+    ]
+}
