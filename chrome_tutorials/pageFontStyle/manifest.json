@@ -1,5 +1,5 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "PageFontStyle",
     "version": "1.0",
     "description": "Changes font style on a specific page",
@@ -16,7 +16,22 @@
     "background": {
         "service_worker": "service-worker.js"
     },
-    "permissions":[
-        "tabs"
+    "content_scripts": [
+        {
+            "matches": [
+                "https://developer.chrome.com/*",
+                "https://www.youtube.com/*"
+            ],
+            "js": [
+                "content-script.js"
+            ],
+            "css": [
+                "content.css"
+            ]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "https://developer.chrome.com/*"
     ]
 }
