@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Video Has",
+    "version": "1.0",
+    "description": "Add the reading time to Chrome Extension documentation articles",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "tabs"
+    ]
+}
